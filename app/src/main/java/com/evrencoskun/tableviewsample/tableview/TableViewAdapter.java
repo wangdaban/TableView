@@ -67,7 +67,6 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      *
      * @param viewType : This value comes from "getCellItemViewType" method to support different
      *                 type of viewHolder as a Cell item.
-     *
      * @see #getCellItemViewType(int);
      */
     @Override
@@ -108,31 +107,35 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      *                       example, the model class is "Cell".
      * @param columnPosition : This is the X (Column) position of the cell item.
      * @param rowPosition    : This is the Y (Row) position of the cell item.
-     *
      * @see #onCreateCellViewHolder(ViewGroup, int) ;
      */
     @Override
-    public void onBindCellViewHolder(AbstractViewHolder holder, Object cellItemModel, int
-            columnPosition, int rowPosition) {
+    public void onBindCellViewHolder(AbstractViewHolder holder, Object cellItemModel, int columnPosition, int rowPosition) {
+
         Cell cell = (Cell) cellItemModel;
 
         switch (holder.getItemViewType()) {
             case MOOD_CELL_TYPE:
                 MoodCellViewHolder moodViewHolder = (MoodCellViewHolder) holder;
 
-                moodViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int) cell
-                        .getData(), false));
+                moodViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+
+                moodViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int) cell.getData(), false));
                 break;
             case GENDER_CELL_TYPE:
                 GenderCellViewHolder genderViewHolder = (GenderCellViewHolder) holder;
 
-                genderViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int)
-                        cell.getData(), true));
+                genderViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+
+                genderViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int) cell.getData(), true));
                 break;
             default:
                 // Get the holder to update cell item text
                 CellViewHolder viewHolder = (CellViewHolder) holder;
-                viewHolder.setCell(cell);
+
+                int width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+
+                viewHolder.setCell(cell,width);
                 break;
         }
     }
@@ -144,7 +147,6 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      *
      * @param viewType : This value comes from "getColumnHeaderItemViewType" method to support
      *                 different type of viewHolder as a Column Header item.
-     *
      * @see #getColumnHeaderItemViewType(int);
      */
     @Override
@@ -170,17 +172,19 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      * @param columnHeaderItemModel : This is the column header view model located on this X
      *                              position. In this example, the model class is "ColumnHeader".
      * @param columnPosition        : This is the X (Column) position of the column header item.
-     *
      * @see #onCreateColumnHeaderViewHolder(ViewGroup, int) ;
      */
     @Override
-    public void onBindColumnHeaderViewHolder(AbstractViewHolder holder, Object
-            columnHeaderItemModel, int columnPosition) {
+    public void onBindColumnHeaderViewHolder(AbstractViewHolder holder, Object columnHeaderItemModel, int columnPosition) {
+
         ColumnHeader columnHeader = (ColumnHeader) columnHeaderItemModel;
 
         // Get the holder to update cell item text
         ColumnHeaderViewHolder columnHeaderViewHolder = (ColumnHeaderViewHolder) holder;
-        columnHeaderViewHolder.setColumnHeader(columnHeader);
+
+        int width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+
+        columnHeaderViewHolder.setColumnHeader(columnHeader, width);
     }
 
     /**
@@ -190,7 +194,6 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      *
      * @param viewType : This value comes from "getRowHeaderItemViewType" method to support
      *                 different type of viewHolder as a row Header item.
-     *
      * @see #getRowHeaderItemViewType(int);
      */
     @Override
@@ -214,17 +217,18 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
      * @param rowHeaderItemModel : This is the row header view model located on this Y position. In
      *                           this example, the model class is "RowHeader".
      * @param rowPosition        : This is the Y (row) position of the row header item.
-     *
      * @see #onCreateRowHeaderViewHolder(ViewGroup, int) ;
      */
     @Override
-    public void onBindRowHeaderViewHolder(AbstractViewHolder holder, Object rowHeaderItemModel,
-                                          int rowPosition) {
+    public void onBindRowHeaderViewHolder(AbstractViewHolder holder, Object rowHeaderItemModel, int rowPosition) {
+
         RowHeader rowHeader = (RowHeader) rowHeaderItemModel;
 
         // Get the holder to update row header item text
         RowHeaderViewHolder rowHeaderViewHolder = (RowHeaderViewHolder) holder;
-        rowHeaderViewHolder.row_header_textview.setText(String.valueOf(rowHeader.getData()));
+        //rowHeaderViewHolder.row_header_textview.setText(String.valueOf(rowHeader.getData()));
+        rowHeaderViewHolder.row_header_textview.setBackgroundResource(rowHeader.getmImageId());
+
     }
 
 
@@ -248,6 +252,7 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
         });
         return corner;
     }
+
 
     @Override
     public int getColumnHeaderItemViewType(int position) {

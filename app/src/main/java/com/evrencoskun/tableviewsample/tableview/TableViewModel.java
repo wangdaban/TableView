@@ -47,8 +47,8 @@ public class TableViewModel {
     public static final int GIRL = 2;
 
     // Constant size for dummy data sets
-    private static final int COLUMN_SIZE = 500;
-    private static final int ROW_SIZE = 500;
+    private static final int COLUMN_SIZE = 5;
+    private static final int ROW_SIZE = 3;
 
     // Drawables
     private final Drawable mBoyDrawable;
@@ -62,16 +62,16 @@ public class TableViewModel {
         mContext = context;
 
         // initialize drawables
-        mBoyDrawable = ContextCompat.getDrawable(context, R.drawable.ic_male);
-        mGirlDrawable = ContextCompat.getDrawable(context, R.drawable.ic_female);
-        mHappyDrawable = ContextCompat.getDrawable(context, R.drawable.ic_happy);
-        mSadDrawable = ContextCompat.getDrawable(context, R.drawable.ic_sad);
+        mBoyDrawable = ContextCompat.getDrawable(context, R.mipmap.btn_add);
+        mGirlDrawable = ContextCompat.getDrawable(context, R.mipmap.btn_add);
+        mHappyDrawable = ContextCompat.getDrawable(context, R.mipmap.btn_add);
+        mSadDrawable = ContextCompat.getDrawable(context, R.mipmap.btn_add);
     }
 
     private List<RowHeader> getSimpleRowHeaderList() {
         List<RowHeader> list = new ArrayList<>();
         for (int i = 0; i < ROW_SIZE; i++) {
-            RowHeader header = new RowHeader(String.valueOf(i), "row " + i);
+            RowHeader header = new RowHeader(String.valueOf(i), "row " + i, R.mipmap.btn_add);
             list.add(header);
         }
 

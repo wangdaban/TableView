@@ -41,7 +41,7 @@ public class CellViewHolder extends AbstractViewHolder {
         cell_container = (LinearLayout) itemView.findViewById(R.id.cell_container);
     }
 
-    public void setCell(Cell cell) {
+    public void setCell(Cell cell, int width) {
         this.cell = cell;
         cell_textview.setText(String.valueOf(cell.getData()));
 
@@ -49,7 +49,7 @@ public class CellViewHolder extends AbstractViewHolder {
         // Then you should consider the below lines. Otherwise, you can ignore them.
 
         // It is necessary to remeasure itself.
-        cell_container.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
+        cell_container.getLayoutParams().width = width;
         cell_textview.requestLayout();
     }
 }

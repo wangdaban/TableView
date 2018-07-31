@@ -252,7 +252,7 @@ public class MainFragment extends Fragment {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            filterTable(String.valueOf(s));
+            //filterTable(String.valueOf(s));
         }
 
         @Override

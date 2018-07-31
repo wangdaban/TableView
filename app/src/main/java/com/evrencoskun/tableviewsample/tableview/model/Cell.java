@@ -28,6 +28,7 @@ public class Cell implements ISortableModel, IFilterableModel {
 
     private String mId;
     private Object mData;
+    private int mImageId;
     private String mFilterKeyword;
 
     public Cell(String id) {
@@ -37,6 +38,13 @@ public class Cell implements ISortableModel, IFilterableModel {
     public Cell(String id, Object data) {
         this.mId = id;
         this.mData = data;
+        this.mFilterKeyword = String.valueOf(data);
+    }
+
+    public Cell(String id, Object data, int mImageId) {
+        this.mId = id;
+        this.mData = data;
+        this.mImageId = mImageId;
         this.mFilterKeyword = String.valueOf(data);
     }
 
@@ -63,7 +71,9 @@ public class Cell implements ISortableModel, IFilterableModel {
         return mData;
     }
 
-    public void setData(String data) { mData = data; }
+    public void setData(String data) {
+        mData = data;
+    }
 
     public String getFilterKeyword() {
         return mFilterKeyword;
@@ -76,6 +86,14 @@ public class Cell implements ISortableModel, IFilterableModel {
     @Override
     public String getFilterableKeyword() {
         return mFilterKeyword;
+    }
+
+    public int getmImageId() {
+        return mImageId;
+    }
+
+    public void setmImageId(int mImageId) {
+        this.mImageId = mImageId;
     }
 }
 

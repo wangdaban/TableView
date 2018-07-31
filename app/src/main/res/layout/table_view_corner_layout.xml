@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2018. Evren Coşkun
   ~
   ~  Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,28 +16,28 @@
   -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="@dimen/row_header_width"
-                android:layout_height="@dimen/cell_height"
-                android:background="@color/cell_background_color">
+    android:layout_width="12dp"
+    android:layout_height="@dimen/cell_height"
+    android:background="@color/cell_background_color">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Corner"
+        android:text=""
         android:textColor="@color/table_view_default_text_color"
-        android:textSize="@dimen/text_size"/>
+        android:textSize="@dimen/text_size" />
 
     <View
         android:layout_width="1px"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
-        android:background="@color/header_line_color"/>
+        android:background="@color/header_line_color" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true"
-        android:background="@color/header_line_color"/>
+        android:background="@color/header_line_color" />
 </RelativeLayout>

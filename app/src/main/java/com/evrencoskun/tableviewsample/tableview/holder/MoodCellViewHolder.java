@@ -45,9 +45,7 @@ public class MoodCellViewHolder extends AbstractViewHolder {
 
     public void setData(Object data) {
         int mood = (int) data;
-        Drawable moodDrawable = ContextCompat.getDrawable(itemView.getContext(), mood ==
-                TableViewModel.HAPPY ? R.drawable.ic_happy : R.drawable.ic_sad);
-
+        Drawable moodDrawable = ContextCompat.getDrawable(itemView.getContext(), mood == TableViewModel.HAPPY ? R.drawable.ic_happy : R.drawable.ic_sad);
         cell_image.setImageDrawable(moodDrawable);
     }
 }

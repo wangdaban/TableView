@@ -30,4 +30,9 @@ public class RowHeader extends Cell {
     public RowHeader(String id, String data) {
         super(id, data);
     }
+
+    public RowHeader(String id, String data, int imageId) {
+        super(id, data, imageId);
+    }
+
 }

@@ -64,12 +64,10 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter {
 
     private void initialize() {
         // Create Column header RecyclerView Adapter
-        mColumnHeaderRecyclerViewAdapter = new ColumnHeaderRecyclerViewAdapter(mContext,
-                mColumnHeaderItems, this);
+        mColumnHeaderRecyclerViewAdapter = new ColumnHeaderRecyclerViewAdapter(mContext, mColumnHeaderItems, this);
 
         // Create Row Header RecyclerView Adapter
-        mRowHeaderRecyclerViewAdapter = new RowHeaderRecyclerViewAdapter(mContext,
-                mRowHeaderItems, this);
+        mRowHeaderRecyclerViewAdapter = new RowHeaderRecyclerViewAdapter(mContext, mRowHeaderItems, this);
 
         // Create Cell RecyclerView Adapter
         mCellRecyclerViewAdapter = new CellRecyclerViewAdapter(mContext, mCellItems, mTableView);
@@ -111,8 +109,7 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter {
         dispatchCellDataSetChangesToListeners(mCellItems);
     }
 
-    public void setAllItems(List<CH> columnHeaderItems, List<RH> rowHeaderItems, List<List<C>>
-            cellItems) {
+    public void setAllItems(List<CH> columnHeaderItems, List<RH> rowHeaderItems, List<List<C>> cellItems) {
         // Set all items
         setColumnHeaderItems(columnHeaderItems);
         setRowHeaderItems(rowHeaderItems);
@@ -125,8 +122,7 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter {
 
             // Create corner view
             mCornerView = onCreateCornerView();
-            mTableView.addView(mCornerView, new FrameLayout.LayoutParams(mRowHeaderWidth,
-                    mColumnHeaderHeight));
+            mTableView.addView(mCornerView, new FrameLayout.LayoutParams(mRowHeaderWidth, mColumnHeaderHeight));
         } else if (mCornerView != null) {
 
             // Change corner view visibility
@@ -156,7 +152,6 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter {
 
     public void setRowHeaderWidth(int rowHeaderWidth) {
         this.mRowHeaderWidth = rowHeaderWidth;
-
         if (mCornerView != null) {
             ViewGroup.LayoutParams layoutParams = mCornerView.getLayoutParams();
             layoutParams.width = rowHeaderWidth;
