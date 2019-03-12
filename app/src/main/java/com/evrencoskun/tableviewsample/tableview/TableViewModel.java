@@ -118,12 +118,7 @@ public class TableViewModel {
         List<ColumnHeader> list = new ArrayList<>();
 
         for (int i = 0; i < COLUMN_SIZE; i++) {
-            String title = "column " + i;
-            int nRandom = new Random().nextInt();
-            if (nRandom % 4 == 0 || nRandom % 3 == 0 || nRandom == i) {
-                title = "large column " + i;
-            }
-
+            String title = 2014 + i + "一季报";
             ColumnHeader header = new ColumnHeader(String.valueOf(i), title);
             list.add(header);
         }

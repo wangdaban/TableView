@@ -31,6 +31,12 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_gravity="top"
+            android:background="@color/header_line_color"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

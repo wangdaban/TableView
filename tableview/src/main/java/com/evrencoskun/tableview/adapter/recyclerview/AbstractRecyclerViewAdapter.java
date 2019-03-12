@@ -29,8 +29,7 @@ import java.util.List;
  * Created by evrencoskun on 10/06/2017.
  */
 
-public abstract class AbstractRecyclerViewAdapter<T> extends RecyclerView
-        .Adapter<AbstractViewHolder> {
+public abstract class AbstractRecyclerViewAdapter<T> extends RecyclerView.Adapter<AbstractViewHolder> {
 
     protected List<T> mItemList;
 

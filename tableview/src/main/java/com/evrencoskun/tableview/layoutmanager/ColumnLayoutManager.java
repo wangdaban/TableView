@@ -102,8 +102,7 @@ public class ColumnLayoutManager extends LinearLayoutManager {
             }
 
             // Need to calculate which one has the broadest width ?
-            fitWidthSize(child, mYPosition, columnPosition, cacheWidth, columnCacheWidth,
-                    columnHeaderChild);
+            fitWidthSize(child, mYPosition, columnPosition, cacheWidth, columnCacheWidth, columnHeaderChild);
         }
 
         // Control all of the rows which has same column position.
@@ -186,8 +185,7 @@ public class ColumnLayoutManager extends LinearLayoutManager {
     }
 
     @Override
-    public int scrollHorizontallyBy(int dx, RecyclerView.Recycler recycler, RecyclerView.State
-            state) {
+    public int scrollHorizontallyBy(int dx, RecyclerView.Recycler recycler, RecyclerView.State state) {
         if (mColumnHeaderRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE &&
                 mCellRowRecyclerView.isScrollOthers()) {
             // Every CellRowRecyclerViews should be scrolled after the ColumnHeaderRecyclerView.

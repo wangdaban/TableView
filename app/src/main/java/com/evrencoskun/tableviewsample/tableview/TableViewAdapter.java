@@ -118,14 +118,14 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
             case MOOD_CELL_TYPE:
                 MoodCellViewHolder moodViewHolder = (MoodCellViewHolder) holder;
 
-                moodViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+                moodViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 45) / 5;
 
                 moodViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int) cell.getData(), false));
                 break;
             case GENDER_CELL_TYPE:
                 GenderCellViewHolder genderViewHolder = (GenderCellViewHolder) holder;
 
-                genderViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+                genderViewHolder.cell_container.getLayoutParams().width = (UIUtil.getScreenWidth(mContext) - 45) / 5;
 
                 genderViewHolder.cell_image.setImageDrawable(mTableViewModel.getDrawable((int) cell.getData(), true));
                 break;
@@ -133,7 +133,7 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
                 // Get the holder to update cell item text
                 CellViewHolder viewHolder = (CellViewHolder) holder;
 
-                int width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+                int width = (UIUtil.getScreenWidth(mContext) - 45) / 5;
 
                 viewHolder.setCell(cell,width);
                 break;
@@ -182,7 +182,7 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
         // Get the holder to update cell item text
         ColumnHeaderViewHolder columnHeaderViewHolder = (ColumnHeaderViewHolder) holder;
 
-        int width = (UIUtil.getScreenWidth(mContext) - 15) / 5;
+        int width = (UIUtil.getScreenWidth(mContext) - 45) / 5;
 
         columnHeaderViewHolder.setColumnHeader(columnHeader, width);
     }
@@ -226,8 +226,8 @@ public class TableViewAdapter extends AbstractTableAdapter<ColumnHeader, RowHead
 
         // Get the holder to update row header item text
         RowHeaderViewHolder rowHeaderViewHolder = (RowHeaderViewHolder) holder;
-        //rowHeaderViewHolder.row_header_textview.setText(String.valueOf(rowHeader.getData()));
-        rowHeaderViewHolder.row_header_textview.setBackgroundResource(rowHeader.getmImageId());
+        rowHeaderViewHolder.row_header_textview.setText("");
+        //rowHeaderViewHolder.row_header_textview.setBackgroundResource(rowHeader.getmImageId());
 
     }
 

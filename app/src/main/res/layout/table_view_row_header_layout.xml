@@ -22,6 +22,11 @@
                 android:background="@color/cell_background_color"
                 android:layout_width="15px"
                 android:layout_height="@dimen/cell_height">
+    <View
+        android:layout_width="1px"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@color/header_line_color"/>
 
     <LinearLayout
         android:id="@+id/row_header_container"

@@ -39,8 +39,7 @@ public interface ITableAdapter {
 
     AbstractViewHolder onCreateCellViewHolder(ViewGroup parent, int viewType);
 
-    void onBindCellViewHolder(AbstractViewHolder holder, Object cellItemModel, int
-            columnPosition, int rowPosition);
+    void onBindCellViewHolder(AbstractViewHolder holder, Object cellItemModel, int columnPosition, int rowPosition);
 
     AbstractViewHolder onCreateColumnHeaderViewHolder(ViewGroup parent, int viewType);
 

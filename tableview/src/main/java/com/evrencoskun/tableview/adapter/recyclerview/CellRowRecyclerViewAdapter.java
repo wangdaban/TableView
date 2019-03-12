@@ -72,8 +72,7 @@ public class CellRowRecyclerViewAdapter<C> extends AbstractRecyclerViewAdapter<C
     public void onViewAttachedToWindow(AbstractViewHolder viewHolder) {
         super.onViewAttachedToWindow(viewHolder);
 
-        SelectionState selectionState = mTableView.getSelectionHandler().getCellSelectionState
-                (viewHolder.getAdapterPosition(), mYPosition);
+        SelectionState selectionState = mTableView.getSelectionHandler().getCellSelectionState(viewHolder.getAdapterPosition(), mYPosition);
 
         // Control to ignore selection color
         if (!mTableView.isIgnoreSelectionColors()) {
